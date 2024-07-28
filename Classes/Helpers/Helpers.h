@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 
-std::string ReadConsoleLine(std::istream& stream);
+std::string ReadLineFromStream(std::istream& stream);
+int ReadNumberFromStream(std::istream& stream);
 
 #endif
