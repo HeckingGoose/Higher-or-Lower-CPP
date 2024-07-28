@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <chrono>
 #include "Classes/Helpers/Helpers.h"
 #include "Classes/HighLow/HighLow.h"
 
@@ -13,7 +14,7 @@ int main()
     const std::string PROMPT_INPUT_PREFIX = ">>>";
     const std::string PROMPT_SETUP_UPPERBOUND = "Please input an upper bound:";
     const std::string PROMPT_SETUP_LOWERBOUND = "Please input a lower bound:";
-    const uint32_t SEED = std::time(0);
+    const u_int32_t SEED = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 
     // Variables
     bool running = true;
