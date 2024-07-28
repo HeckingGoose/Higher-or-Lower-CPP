@@ -1,21 +1,30 @@
 #include <iostream>
 #include <string>
-#include "Classes/Helpers/Helpers.cpp"
+#include "Classes/Helpers/Helpers.h"
+#include "Classes/HighLow/HighLow.h"
 
 int main()
 {
     // Constants
-    std::string WELCOME_TEXT = "Welcome to Higher or Lower";
-    std::string GUESS_TEXT = "Guess a number:";
-    std::string GUESS_PREFIX = ">>>";
-    std::string TOO_HIGH = "Lower!";
-    std::string TOO_LOW = "Higher!";
+    const std::string WELCOME_TEXT = "Welcome to Higher or Lower";
+    const std::string TOO_HIGH = "Lower!";
+    const std::string TOO_LOW = "Higher!";
+    const std::string PROMPT_GUESS_TEXT = "Guess a number:";
+    const std::string PROMPT_INPUT_PREFIX = ">>>";
+    const std::string PROMPT_SETUP_UPPERBOUND = "Please input an upper bound:";
+    const std::string PROMPT_SETUP_LOWERBOUND = "Please input a lower bound:";
+    const uint32_t SEED = std::time(0);
 
     // Variables
     bool running = true;
 
     // Display welcome text
-    std::cout << WELCOME_TEXT << "\n";
+    std::cout << HLC::WELCOME_TEXT << "\n";
+
+    // Set std::rand seed
+    std:srand(SEED);
+
+    // Prompt user to input an upper bound for random value
 
     // Begin main loop
     while (running)
@@ -24,7 +33,7 @@ int main()
         std::string guess;
 
         // Display guess text
-        std::cout << GUESS_TEXT << "\n" << GUESS_PREFIX;
+        std::cout << PROMPT_GUESS_TEXT << "\n" << PROMPT_INPUT_PREFIX;
 
         // Read user input
         guess = ReadConsoleLine(std::cin);
