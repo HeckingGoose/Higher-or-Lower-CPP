@@ -1,3 +1,11 @@
 # Directories
 *build/
 *.vscode/
+*.vs/
+
+# Files
+*.obj
+*.pdb
+
+# Absolute Thingies
+CppProperties.json
