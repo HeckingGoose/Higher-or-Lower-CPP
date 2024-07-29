@@ -1,10 +1,21 @@
 #include "Helpers.h"
 
+// HC Class
+const std::string HC::INVALID_BASE = "Not a valid ";
+const std::string HC::INVALID_INTEGER = HC::INVALID_BASE + "integer.";
+const std::string HC::TELL_RESUBMIT = "Please retry.";
+const std::string HC::INPUT_PREFIX = ">>>";
+const std::string HC::QUIT_TEXT = "Press any key to quit...";
+const char HC::NEW_LINE = '\n';
+
 std::string ReadLineFromStream(std::istream& stream)
 {
     // Declare variables
     char cache;
     std::string output;
+
+    // Waiting prompt
+    std::cout << HC::INPUT_PREFIX << ' ';
 
     // Loop until line ending is found
     do
@@ -48,7 +59,7 @@ int ReadNumberFromStream(std::istream& stream)
             passed = false;
             
             // Tell user they did it wrong
-            std::cout << "Not a valid number!";
+            std::cout << HC::INVALID_INTEGER << HC::NEW_LINE;
         }
     }
     while (!passed);
@@ -57,4 +68,12 @@ int ReadNumberFromStream(std::istream& stream)
     return output;
 
     // Move out of this and into main, so that reloops work proper
+}
+void QuitPrompt()
+{
+    // Display wait prompt
+    std::cout << HC::QUIT_TEXT;
+
+    // Wait for any key
+    std::cin.get();
 }
