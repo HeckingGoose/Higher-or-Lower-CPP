@@ -17,7 +17,7 @@ class HC
 };
 
 std::string ReadLineFromStream(std::istream& stream);
-int ReadNumberFromStream(std::istream& stream);
+int32_t ReadNumberFromStream(std::istream& stream);
 void QuitPrompt();
 
 #endif

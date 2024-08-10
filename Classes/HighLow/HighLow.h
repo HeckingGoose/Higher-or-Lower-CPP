@@ -14,7 +14,7 @@ class HLC
     static const std::string PROMPT_INPUT_PREFIX;
     static const std::string PROMPT_SETUP_UPPERBOUND;
     static const std::string PROMPT_SETUP_LOWERBOUND;
-    static const u_int32_t SEED;
+    static const uint32_t SEED;
 };
 
 #endif

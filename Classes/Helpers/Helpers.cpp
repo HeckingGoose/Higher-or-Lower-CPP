@@ -34,11 +34,11 @@ std::string ReadLineFromStream(std::istream& stream)
     // Return read data
     return output;
 }
-int ReadNumberFromStream(std::istream& stream)
+int32_t ReadNumberFromStream(std::istream& stream)
 {
     // Declare variables
     bool passed = false;
-    int output;
+    int32_t output;
 
     // Loop until we've succeeded
     do

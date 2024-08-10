@@ -43,16 +43,16 @@ int main()
     while (lowerBound >= upperBound);
 
     // Calculate range
-    int boundRange = upperBound - lowerBound;
+    int32_t boundRange = upperBound - lowerBound;
 
     // Create random number
-    int goal = (std::rand() % boundRange) + lowerBound + 1;
+    int32_t goal = (std::rand() % boundRange) + lowerBound + 1;
 
     // Begin main loop
     while (running)
     {
         // Declare guess
-        int guess;
+        int32_t guess;
 
         // Generate guess text
         std::string guessText = "Pick a number between " + std::to_string(lowerBound) + " and " + std::to_string(upperBound) + ":";
